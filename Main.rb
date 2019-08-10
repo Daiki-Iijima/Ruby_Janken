@@ -1,3 +1,4 @@
+# プレイヤーの処理
 def player
   get = gets
   getNum = get.to_i
@@ -13,6 +14,7 @@ def player
   return getNum
 end
 
+# コンピューターの処理
 def enemy
   r = rand(3) + 1
 
@@ -27,6 +29,8 @@ def enemy
   return r
 end
 
+# 判定部分
+# todo : 処理が冗長
 def judge(enemy,player)
   if enemy == player
     puts '== あいこ =='
@@ -53,7 +57,6 @@ def judge(enemy,player)
 end
 
 class Main
-  # じゃんけん
 
   while true
 
@@ -62,6 +65,7 @@ class Main
     playerNum = player
     enemyNum = enemy
 
+    # ループを止めるかを判定
     if !judge(enemyNum,playerNum)
       break;
     end
