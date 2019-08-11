@@ -1,15 +1,25 @@
+# 「ぐーちょきぱー」のハッシュ配列
+# 定数にする時は大文字にしなければいけない？
+Values ={
+  1 => 'ぐー',
+  2 => 'ちょき',
+  3 => 'ぱー'
+}
+
+# 定数が変更されないようにするおまじないかな？使えって書いてあった
+Values.freeze
+
 # プレイヤーの処理
 def player
+  puts '1 : ぐー'
+  puts '2 : ちょき'
+  puts '3 : ぱー'
+  puts '== 入力してください =='
+
   get = gets
   getNum = get.to_i
 
-  if getNum  == 1
-    puts 'ぐー'
-  elsif getNum  == 2
-    puts 'ちょき'
-  elsif getNum  == 3
-    puts 'ぱー'
-  end
+  puts "Player : " + Values[getNum]
 
   return getNum
 end
@@ -18,13 +28,7 @@ end
 def enemy
   r = rand(3) + 1
 
-  if r == 1
-    puts 'ぐー'
-  elsif r == 2
-    puts 'ちょき'
-  elsif r == 3
-    puts 'ぱー'
-  end
+  puts 'コンピューター  : ' + Values[r]
 
   return r
 end
@@ -60,7 +64,7 @@ class Main
 
   while true
 
-    puts '== じゃんけん =='
+    puts '### じゃんけん ###'
 
     playerNum = player
     enemyNum = enemy
