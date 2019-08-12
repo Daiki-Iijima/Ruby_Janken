@@ -11,10 +11,6 @@ Values.freeze
 
 # プレイヤーの処理
 def player
-  puts '1 : ぐー'
-  puts '2 : ちょき'
-  puts '3 : ぱー'
-  puts '== 入力してください =='
 
   get = gets
   getNum = get.to_i
@@ -65,6 +61,12 @@ class Main
   while true
 
     puts '### じゃんけん ###'
+
+    # 配列の列挙で入力してもらう値のアナウンス
+    Values.each{|key,value|
+      puts "#{key} : #{value}"
+    }
+    puts '== 数字を入力してください =='
 
     playerNum = player
     enemyNum = enemy
